@@ -1,5 +1,4 @@
 import MalmoPython
-import os
 import random
 import threading
 import time

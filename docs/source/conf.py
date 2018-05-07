@@ -14,8 +14,13 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../jason_malmo'))
+import mock
 
+sys.path.insert(0, os.path.abspath('../..'))
+
+MOCK_MODULES = ['MalmoPython', 'malmoutils', 'pyson']
+for mod_name in MOCK_MODULES:
+    sys.modules[mod_name] = mock.Mock()
 
 # -- Project information -----------------------------------------------------
 
@@ -27,7 +32,6 @@ author = u'Emilio Carrión and Javier López'
 version = '0.1'
 # The full version, including alpha/beta/rc tags
 release = '0.1-a1'
-
 
 # -- General configuration ---------------------------------------------------
 
@@ -73,7 +77,6 @@ exclude_patterns = []
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
 
-
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -108,7 +111,6 @@ html_static_path = ['_static']
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'wedoc'
 
-
 # -- Options for LaTeX output ------------------------------------------------
 
 latex_elements = {
@@ -137,7 +139,6 @@ latex_documents = [
      'we', 'manual'),
 ]
 
-
 # -- Options for manual page output ------------------------------------------
 
 # One entry per manual page. List of tuples
@@ -146,7 +147,6 @@ man_pages = [
     (master_doc, 'we', 'we Documentation',
      [author], 1)
 ]
-
 
 # -- Options for Texinfo output ----------------------------------------------
 
