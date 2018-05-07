@@ -1,8 +1,8 @@
 import json
-from pyson.runtime import Agent
+import pyson.runtime
 
 
-class JasonAgent(Agent):
+class JasonAgent(pyson.runtime.Agent):
     """Default Agent class.
 
     Attributes:
