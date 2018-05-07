@@ -21,7 +21,7 @@ Check the docs `here <http://jason-malmo.readthedocs.io>`_.
 
 Quickstart
 **********
-.. code-block:: none
+.. code:: none
     :caption: agent.asl
     :name: agent.asl
 
@@ -32,7 +32,7 @@ Quickstart
       .print(MyPos)
     .
 
-.. code-block:: python
+.. code:: python
     :caption: main.py
     :name: main.py
 
@@ -43,7 +43,7 @@ Quickstart
 
     game.run()
 
-.. code-block:: none
+.. code:: none
     :caption: Output
     :name: Output
 
