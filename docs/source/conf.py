@@ -14,13 +14,25 @@
 #
 import os
 import sys
-import mock
+from mock import MagicMock
 
 sys.path.insert(0, os.path.abspath('../..'))
 
 MOCK_MODULES = ['MalmoPython', 'malmoutils', 'pyson', 'pyson.stdlib', 'pyson.runtime', 'future.utils']
+MOCK_CLASSES = ['Agent']
+
+
+class Mock(MagicMock):
+    @classmethod
+    def __getattr__(cls, name):
+        if name in MOCK_CLASSES:
+            return object
+        return MagicMock()
+
+
 for mod_name in MOCK_MODULES:
-    sys.modules[mod_name] = mock.Mock()
+    sys.modules[mod_name] = Mock()
+
 
 # -- Project information -----------------------------------------------------
 
