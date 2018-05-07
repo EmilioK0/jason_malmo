@@ -16,17 +16,11 @@ import os
 import sys
 import mock
 
-
-class Mock(mock.MagicMock):
-    @classmethod
-    def __getattr__(cls, name):
-        return mock.MagicMock()
-
-
 sys.path.insert(0, os.path.abspath('../..'))
 
-MOCK_MODULES = ['MalmoPython', 'malmoutils', 'pyson.runtime', 'pyson', 'pyson.stdlib', 'future.utils', 'json']
-sys.modules.update((mod_name, Mock()) for mod_name in MOCK_MODULES)
+MOCK_MODULES = ['MalmoPython', 'malmoutils', 'pyson', 'pyson.stdlib', 'pyson.runtime', 'future.utils']
+for mod_name in MOCK_MODULES:
+    sys.modules[mod_name] = mock.Mock()
 
 # -- Project information -----------------------------------------------------
 
