@@ -18,37 +18,3 @@ Requirements
 Documentation
 *************
 Check the docs `here <http://jason-malmo.readthedocs.io>`_.
-
-Quickstart
-**********
-.. code:: none
-    :caption: agent.asl
-    :name: agent.asl
-
-    !hello_world.
-
-    +!hello_world <-
-      .position(MyPos);
-      .print(MyPos)
-    .
-
-.. code:: python
-    :caption: main.py
-    :name: main.py
-
-    from jason_malmo.game import Game
-
-    game = Game('Agent test')
-    game.register(os.path.join(os.path.dirname(__file__), 'agent.asl'))
-
-    game.run()
-
-.. code:: none
-    :caption: Output
-    :name: Output
-
-    Calling startMission for role 0
-    startMission called okay.
-    Waiting for the mission to start . . . . . .
-    Mission has started.
-    agent [8, 229, 5]
