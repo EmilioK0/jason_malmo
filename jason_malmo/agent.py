@@ -6,7 +6,7 @@ class Agent(PysonAgent):
     """Default Agent class.
 
     Attributes:
-        malmo_agent (:obj:`MalmoPython.AgentHost`): Malmo Agent
+        malmo_agent: Malmo Agent
     """
 
     def __init__(self, env, name, beliefs=None, rules=None, plans=None):
