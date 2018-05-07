@@ -18,7 +18,7 @@ import mock
 
 sys.path.insert(0, os.path.abspath('../..'))
 
-MOCK_MODULES = ['MalmoPython', 'malmoutils', 'pyson', 'pyson.stdlib', 'pyson.runtime', 'future.utils', 'json']
+MOCK_MODULES = ['MalmoPython', 'malmoutils', 'pyson', 'pyson.stdlib', 'pyson.runtime', 'pyson.runtime.Agent', 'future.utils', 'json']
 for mod_name in MOCK_MODULES:
     sys.modules[mod_name] = mock.Mock()
 
