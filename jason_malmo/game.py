@@ -7,7 +7,7 @@ import malmoutils
 import pyson.runtime
 
 from jason_malmo.actions import actions
-from jason_malmo.agent import Agent
+from jason_malmo.agent import JasonAgent
 from jason_malmo.exceptions import NoAgentsException
 from jason_malmo.tasks import TaskManager
 
@@ -44,7 +44,7 @@ class Game:
         """
         with open(agent_file) as source:
             agent = self._jason_env.build_agent(source, actions)
-            agent.__class__ = Agent
+            agent.__class__ = JasonAgent
             agent.malmo_agent = MalmoPython.AgentHost()
             self._agents.append(agent)
             
