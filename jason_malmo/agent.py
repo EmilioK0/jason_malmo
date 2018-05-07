@@ -1,12 +1,12 @@
 import json
-from pyson.runtime import Agent as PysonAgent
+import pyson.runtime
 
 
-class Agent(PysonAgent):
+class Agent(pyson.runtime.Agent):
     """Default Agent class.
 
     Attributes:
-        malmo_agent: Malmo Agent
+        malmo_agent (:obj:`MalmoPython.AgentHost`): Malmo Agent
     """
 
     def __init__(self, env, name, beliefs=None, rules=None, plans=None):
